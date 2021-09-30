@@ -98,6 +98,15 @@ However, **you must cite and reference the resources or sample code you use and 
 **_This includes anything from [bl.ocks.org](https://bl.ocks.org/), [Observable](https://observablehq.com/@d3/gallery), or [Stack Overflow](https://stackoverflow.com/)!_**
 Failure to properly cite and attribute code is a breach of academic integrity.
 
+**Resources Used:**
+
+- [D3 Bar Chart Tutorial](https://blog.risingstack.com/d3-js-tutorial-bar-charts-with-javascript/)
+  - We used this resource to get a better understanding of how to structure a basic Bar Chart with D3.
+- [D3 Mouse Event + Coloring Example](https://www.d3-graph-gallery.com/graph/interactivity_tooltip.html#template)
+  - We used this resource to see working examples of Mouse Over / Leave events, as well as how to color the 'plots' differently based on their value.
+- [Insurance CSV Data](https://www.kaggle.com/mirichoi0218/insurance/version/1)
+  - We used this resource to get data that is better for a scatterplot than data we had on hand.
+
 Additionally, you should under no circumstances copy a classmate's code. You are welcome to ask fellow classmates and students for help and discuss the assignment, but **your submission should be your own work**.
 See Canvas for more detail on our academic integrity policy and expectations.
 

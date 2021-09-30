@@ -1,90 +1,145 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+  <!-- Metadata -->
+  <head>
+    <meta charset="utf-8" />
 
-<!-- Metadata -->
-<head>
-  <meta charset='utf-8'>
+    <!-- Title -->
+    <title>hw-03: Practicing D3</title>
 
-  <!-- Title -->
-  <title>hw-03: Practicing D3</title>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- CSS Styling -->
-  <link rel='stylesheet' href='style.css'>
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-  <!-- Favicons -->
-  <link rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png'>
-  <link rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png'>
-  <link rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png'>
-  <link rel='manifest' href='favicons/site.webmanifest'>
-  <link rel='shortcut icon' href='favicons/favicon.ico'>
-  <meta name='msapplication-TileColor' content='#da532c'>
-  <meta name='msapplication-config' content='favicons/browserconfig.xml'>
-  <meta name='theme-color' content='#ffffff'>
-</head>
+  <!-- Main page content -->
+  <body>
+    <!-- Update this with your GitHub repo URL -->
+    <span id="forkongithub"
+      ><a
+        href="https://github.com/DS4200-Fall21-Sec02/hw-03-practice-d3-will-tian-dan"
+        >Fork me on GitHub</a
+      ></span
+    >
 
-<!-- Main page content -->
-<body>
+    <!-- Writeup -->
+    <div class="content-column">
+      <h1>hw-03: Practicing D3</h1>
 
-  <!-- Update this with your GitHub repo URL -->
-  <span id='forkongithub'><a href='https://github.com/DS4200-Fall21-Sec02/practice-D3'>Fork me on GitHub</a></span>
+      <!-- Explain the dataset you choose to use and why you chose it. Make sure to include a clickable hyperlink to the original data source and include a copy of the data with your submission.
+      Justify why the encoding (i.e., bar chart, scatter plot) you chose is appropriate for the data you visualize -->
 
-  <!-- Writeup -->
-  <div class='content-column'>
-    <h1>hw-03: Practicing D3</h1>
+      <h2>Visualization #1</h2>
+      <p>
+        This dataset shows, for apartment buildings in Austin, TX, which of them
+        have a Chatbot of some sort on their website. If they do have a chatbot,
+        it shows what company creates this chatbot. Our group member Will built
+        a web scraper to ascertain this data by crawling apartments.com pages
+        for a personal product (ie. Will is the original data source), and the
+        data structure seemed perfect for a bar graph, so we chose to use it. A
+        bar chart makes sense because we want to show the spread of popularity
+        of different products among a population. The easiest way to do so is to
+        show how many buildings use each type of Chatbot, which can be most
+        easily digested in bar-graph format as seen below. We coded
+        functionality to show tooltips on hover for each bar (as you can see the
+        opacity changes & is given an outline), but there is an error preventing
+        them from working. We will ask how to address this issue in class.
+      </p>
 
-    <p>
-      Replace this text. Use this space to describe your visualizations.
-    </p>
+      <!-- Visualization goes here -->
+      <div class="vis-holder" id="vis1"></div>
 
-    <h2>Simple formatting instructions</h2>
+      <h2>Visualization #2</h2>
+      <p>
+        This dataset shows, for a selected sub-population, what correlation
+        exists between age and body-mass-index. This dataset is
+        <a href="https://www.kaggle.com/mirichoi0218/insurance/version/1">
+          Insurance CSV Data</a
+        >
+        and is ideal for a scatterplot because each 'row' of information has
+        multiple ordinal numerican values (age & bmi). When placing each on an
+        axis, we can see any natural correlations between age and bmi very
+        easily with the scatterplot format. For this visualization, we could not
+        figure out how to limit the amount of 'ticks' on the independent access,
+        so that all of the ages were not so squished together. We will ask about
+        this in class.
+      </p>
 
-    <p>
-      Use <code>&lt;p&gt;&lt;/p&gt;</code> tags to enclose a paragraph in html. <br>
-      Use <code>&lt;h2&gt;&lt;/h2&gt;</code> to enclose a heading. <br>
-      Use <code>&lt;br&gt;</code> to force a line break.
-    </p>
+      <!-- Visualization goes here -->
+      <div class="vis-holder" id="vis2"></div>
 
-    <p>
-      There are two premade <code>div</code> in this document that will hold your visualizations. The first one has id <code>vis1</code>, the second one has <code>vis2</code>. Write your explanation and analysis close to each of your visualizations.
-    </p>
+      <h2>Acknowledgments</h2>
+      <ul>
+        <li>
+          <a
+            href="https://blog.risingstack.com/d3-js-tutorial-bar-charts-with-javascript/"
+          >
+            D3 Bar Chart Tutorial</a
+          >
+          We used this resource to get a better understanding of how to
+          structure a basic Bar Chart with D3.
+        </li>
+        <li>
+          <a
+            href="https://www.d3-graph-gallery.com/graph/interactivity_tooltip.html#template"
+          >
+            D3 Mouse Event + Coloring Example</a
+          >
+          We used this resource to see working examples of Mouse Over / Leave
+          events, as well as how to color the 'plots' differently based on their
+          value.
+        </li>
+      </ul>
 
-    <p>
-      Your first visualization goes here:
-    </p>
+      <ul>
+        <li>
+          <a href="https://d3js.org/"> D3: Data-Driven Documents</a>
+          by Mike Bostock is used for manipulating the DOM to create
+          visualizations.
+        </li>
+        <li>
+          <a href="https://codepo8.github.io/css-fork-on-github-ribbon/#">
+            Pure CSS responsive 'Fork me on GitHub' ribbon</a
+          >
+          by Chris Heilmann is used to create the banner that links back to the
+          source code repository.
+        </li>
+        <li>
+          <a
+            href="https://github.com/NEU-DS-4200-F20-Staff/Assignment--D3_Basic_Charts"
+          >
+            Assignment--D3_Basic_Charts</a
+          >
+          by Cody Dunne is used to create this assignment.
+        </li>
+      </ul>
+    </div>
 
-    <!-- Visualization goes here -->
-    <div class='vis-holder' id='vis1'></div>
-
-	  <p>
-      Your second visualization goes here:
-    </p>
-
-    <!-- Visualization goes here -->
-    <div class='vis-holder' id='vis2'></div>
-
-    <h2>Acknowledgments</h2>
-
-    <p>
-      <em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em>
-    </p>
-
-    <ul>
-      <li><a href='https://d3js.org/'>
-        D3: Data-Driven Documents</a>
-        by Mike Bostock is used for manipulating the DOM to create visualizations.
-      </li>
-      <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
-        Pure CSS responsive 'Fork me on GitHub' ribbon</a>
-        by Chris Heilmann is used to create the banner that links back to the source code repository.
-      </li>
-      <li><a href='https://github.com/NEU-DS-4200-F20-Staff/Assignment--D3_Basic_Charts'>
-        Assignment--D3_Basic_Charts</a>
-        by Cody Dunne is used to create this assignment.
-      </li>
-    </ul>
-  </div>
-
-  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
-</body>
-
+    <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  </body>
+  <script src="/lib/d3.v6.1.1/d3.js"></script>
+  <script src="/js/main.js"></script>
 </html>
