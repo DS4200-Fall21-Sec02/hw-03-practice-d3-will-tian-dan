@@ -44,8 +44,9 @@ let svg2 = d3
     ].join(' ')
   );
 
+// Import dataset #1
 d3.csv('../data/dallas-tx.csv').then(function (data) {
-  // Define two objects to build the type of data we want
+  // Count occurrences of each chatbot and make a new dictionary with these values
   graphOneObj = {};
   badChats = ['', 'text us', 'N/A', 'AnyoneHome'];
   for (const d of data) {
@@ -64,6 +65,9 @@ d3.csv('../data/dallas-tx.csv').then(function (data) {
     temp['value'] = graphOneObj[key];
     graphOneArr.push(temp);
   }
+
+  // Define the chart's location and basic structural info
+
   const chart = svg1.append('g').attr('transform', `translate(${60}, ${60})`);
 
   const yScale = d3.scaleLinear().range([height, 0]).domain([0, 100]);
@@ -114,6 +118,8 @@ d3.csv('../data/dallas-tx.csv').then(function (data) {
     d3.select(this).style('stroke', 'none').style('opacity', 0.8);
   };
 
+  // Build the chart with the imported data
+
   chart
     .selectAll()
     .data(graphOneArr)
@@ -130,6 +136,7 @@ d3.csv('../data/dallas-tx.csv').then(function (data) {
     .attr('height', (s) => height - yScale(s.value))
     .attr('width', xScale.bandwidth());
 
+  // Add a grid to the chart
   chart
     .append('g')
     .attr('class', 'grid')
@@ -141,6 +148,7 @@ d3.csv('../data/dallas-tx.csv').then(function (data) {
     .attr('class', 'grid')
     .call(d3.axisLeft().scale(yScale).tickSize(-width, 0, 0).tickFormat(''));
 
+  // Add labels
   svg1
     .append('text')
     .attr('x', -(height / 2) - 60)
@@ -164,6 +172,7 @@ d3.csv('../data/dallas-tx.csv').then(function (data) {
     .text('Chatbot Brand Popularity With Apartments in Austin, TX');
 });
 
+// Import data for visualization #2
 d3.csv('../data/insurance.csv').then(function (data) {
   data.sort((a, b) => (a.age > b.age ? 1 : -1));
   console.log(data);
